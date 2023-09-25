@@ -22,7 +22,7 @@
         <div class="cell">Portal 2</div>
       </div>
       <div class="column">
-        <div class="column__header cell">Cтраны</div>
+        <div class="column__header cell">Страны</div>
         <div class="cell">Россия</div>
         <div class="cell">Испания</div>
         <div class="cell">Швеция</div>
@@ -81,7 +81,7 @@
           <span class="checkbox">
             <i class="fa-solid fa-check check-icon"></i>
           </span>
-          <span class="item-text">Что-то длинное</span>
+          <span class="item-text">Что-то очень длинное</span>
         </li>
         <li class="item">
           <span class="checkbox">
@@ -91,8 +91,16 @@
         </li>
       </ul>
     </div>
-
+    <div class="search-wrapper">
+      <label for="search-text">
+        <input id="search-text" class="search-wrapper__search-text" placeholder="Что же мы ищем..."/>
+      </label>
+      <button class="search-wrapper__search-btn">Искать!</button>
+      <span>Совпадений найдено: <span class="search-wrapper__results-number"></span></span>
+    </div>
+    <script src="./JS/constants.js"></script>
     <script src="./JS/script.js"></script>
     <script src="./JS/multiselect.js"></script>
+    <script src="./JS/search.js"></script>
   </body>
 </html>

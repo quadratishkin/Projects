@@ -1,8 +1,3 @@
-const tableEl = document.getElementsByClassName("table-wrapper")[0];
-const columnHeaders = Array.from(
-  document.getElementsByClassName("column__header")
-);
-const columns = Array.from(document.getElementsByClassName("column"));
 let isHeadersRemoved = false;
 handleColumnToggle();
 window.addEventListener("resize", () => {
