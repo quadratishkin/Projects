@@ -7,26 +7,34 @@
 }
 .container {
   position: relative;
-  max-width: 320px;
+  max-width: 360px;
   width: 100%;
-  margin: 80px auto 30px;
+  margin: 1vh 1.5vh;
 }
 .select-btn {
   display: flex;
   height: 50px;
   align-items: center;
+  caret-color: transparent;
   justify-content: space-between;
   padding: 0 16px;
+  border: 3px solid rgba(255, 228, 196, 0.7);
   border-radius: 8px;
   cursor: pointer;
   background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.6s ease;
 }
 .select-btn .btn-text {
   font-size: 17px;
   font-weight: 400;
   color: #333;
 }
+
+.select-btn:hover {
+  background-color: rgba(255, 245, 233, 0.9);
+}
+
 .select-btn .arrow-dwn {
   display: flex;
   height: 21px;
@@ -34,7 +42,7 @@
   color: #fff;
   font-size: 14px;
   border-radius: 50%;
-  background: #6e93f7;
+  background: rgb(243, 179, 102);
   align-items: center;
   justify-content: center;
   transition: 0.3s;
@@ -47,8 +55,9 @@
   margin-top: 15px;
   border-radius: 8px;
   padding: 16px;
+  border: 3px solid rgba(255, 228, 196, 0.7);
   background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1);
   display: none;
 }
 .select-btn.open ~ .list-items {
@@ -62,6 +71,7 @@
   cursor: pointer;
   transition: 0.3s;
   padding: 0 15px;
+  caret-color: transparent;
   border-radius: 8px;
 }
 .list-items .item:hover {
