@@ -58,7 +58,7 @@ function handleHighlight(cell, searchRegExp) {
   });
 }
 
-function resetHighlight(searchText) {
+function resetHighlight() {
   const matches = Array.from(
     document.getElementsByClassName("search-text__highlighted")
   );
