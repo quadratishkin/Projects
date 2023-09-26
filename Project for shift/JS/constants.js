@@ -1,4 +1,3 @@
-const tableEl = document.getElementsByClassName("table-wrapper")[0]; // Контейнер таблицы
 const columnHeaders = Array.from( // массив заголовков таблицы
     document.getElementsByClassName("column__header")
 );

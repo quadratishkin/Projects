@@ -7,6 +7,7 @@
   overflow: hidden;
   display: block;
 }
+
 .cell {
   padding: 0.5rem;
   display: block;
@@ -15,28 +16,37 @@
   overflow: hidden;
   border: 1px solid gray;
 }
+
 .cell:hover {
   background-color: rgb(247, 216, 178);
 }
+
 .cell--highlighted {
   background-color: rgba(255, 228, 196, 0.5);
 }
+
 .table-wrapper {
   display: flex;
 
   max-width: 1600px;
   height: fit-content;
 }
+
 .column {
   width: 20%;
   display: flex;
   flex-direction: column;
   flex-grow: 2;
 }
+
 .column__header {
   text-align: center;
   font-size: 18px;
   font-weight: 700;
+}
+
+.search-text__highlighted {
+   background-color: #ebcf10;
 }
 @media (max-width: 420px) {
   .table-wrapper {

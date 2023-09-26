@@ -93,7 +93,7 @@
     </div>
     <div class="search-wrapper">
       <label for="search-text">
-        <input id="search-text" class="search-wrapper__search-text" placeholder="Что же мы ищем..."/>
+        <input id="search-text" class="search-wrapper__search-text" onfocus="this.oldValue = this.value;" oninput="this.oldValue = this.value;" placeholder="Что же мы ищем..."/>
       </label>
       <button class="search-wrapper__search-btn">Искать!</button>
       <span>Совпадений найдено: <span class="search-wrapper__results-number"></span></span>

@@ -1,3 +1,4 @@
+const tableEl = document.getElementsByClassName("table-wrapper")[0]; // Контейнер таблицы
 let isHeadersRemoved = false;
 handleColumnToggle();
 window.addEventListener("resize", () => {
