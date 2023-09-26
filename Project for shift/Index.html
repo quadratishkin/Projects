@@ -56,13 +56,14 @@
         <input
           id="search-text"
           class="search-wrapper__search-text"
+          type="text"
           onfocus="this.oldValue = this.value;"
           oninput="this.oldValue = this.value;"
           placeholder="Что же мы ищем..."
         />
       </label>
       <button class="search-wrapper__search-btn">Искать!</button>
-      <span
+      <span class="text-match-label"
         >Совпадений найдено: <span class="search-wrapper__results-number"></span
       ></span>
     </div>

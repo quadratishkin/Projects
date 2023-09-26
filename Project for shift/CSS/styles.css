@@ -8,6 +8,31 @@
   display: block;
 }
 
+.search-wrapper__search-btn {
+  background: white;
+  padding: 0.35rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.search-wrapper__search-btn:active {
+  background: rgb(247, 216, 178);
+  color: black;
+}
+
+.search-wrapper__search-text {
+  padding: 0.35rem;
+  border-radius: 5px;
+}
+
+.search-wrapper__search-text:focus {
+  background: rgb(247, 216, 178);
+  color: black;
+}
+
+.text-match-label {
+  caret-color: transparent;
+}
+
 .cell {
   padding: 0.5rem;
   display: block;

@@ -2,6 +2,7 @@ const searchBtn = document.querySelector(".search-wrapper__search-btn");
 const searchResultsCountEl = document.querySelector(
   ".search-wrapper__results-number"
 );
+let replacedMatchesDictionary = [];
 let oldValue = "";
 document
   .querySelector(".search-wrapper__search-btn")
@@ -12,6 +13,7 @@ document
       document.getElementsByClassName("column")
     );
     resetHighlight(searchText);
+    replacedMatchesDictionary = [];
     if (!searchText.length) {
       searchResultsCountEl.textContent = "0"; // если ищем пустую строку - обнуляем счётчик
       oldValue = "";
@@ -27,13 +29,13 @@ document
       const cells = Array.from(activeColumn.children);
       cells.forEach((cell) => {
         // forEach, т.к. надо всё равно пройтись по всем клеткам. Нет смысла проходить через for of.
-        const foundMatchesCount = (cell.textContent.match(searchRegExp) || [])
-          .length;
-        if (foundMatchesCount === 0) {
+        const foundMatches = cell.textContent.match(searchRegExp) || [];
+        if (foundMatches.length === 0) {
           // нет совпадений в ячейке? скипаем!
           return;
         }
-        resultCount += foundMatchesCount; // foundMatchesCount всегда существует (выше скип). Поэтому просто добавляем к счётчику найденные совпадения в данной ячейке.
+        replacedMatchesDictionary.push(...foundMatches);
+        resultCount += foundMatches.length; // foundMatches всегда существует (выше скип). Поэтому просто добавляем к счётчику найденные совпадения в данной ячейке.
         handleHighlight(cell, searchRegExp); // теперь нужно их покрасить
       });
     });
@@ -43,15 +45,24 @@ document
 
 function handleHighlight(cell, searchRegExp) {
   // searchRegExp.source - это то, что мы ищем. Но нужно подсветить текст. Поэтому обрамляем его span-ом.
-  const replaceHtmlStr = `<span class="search-text__highlighted">${searchRegExp.source}</span>`; // todo: обработать проблему с подменой регистра
-  cell.innerHTML = cell.innerHTML.replace(searchRegExp, replaceHtmlStr);
+  (cell.textContent.match(searchRegExp) || []).forEach((match, index) => {
+    let currentSearchIdx = 0;
+    cell.innerHTML = cell.innerHTML.replace(
+      new RegExp(match, "gi"),
+      (match) => {
+        return currentSearchIdx++ === index
+          ? `<span class="search-text__highlighted">${match}</span>`
+          : match;
+      }
+    );
+  });
 }
 
 function resetHighlight(searchText) {
   const matches = Array.from(
     document.getElementsByClassName("search-text__highlighted")
   );
-  matches.forEach((match) => {
-    match.replaceWith(match.textContent);
+  matches.forEach((match, i) => {
+    match.replaceWith(replacedMatchesDictionary[i]);
   });
 }
