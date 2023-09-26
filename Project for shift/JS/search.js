@@ -1,4 +1,3 @@
-const searchBtn = document.querySelector(".search-wrapper__search-btn");
 const searchResultsCountEl = document.querySelector(
   ".search-wrapper__results-number"
 );
