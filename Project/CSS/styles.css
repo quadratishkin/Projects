@@ -1,5 +1,6 @@
 .rounded-img {
   width: 50%;
+  caret-color: transparent;
   border-radius: 45%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
   padding: 0.6em;
@@ -9,6 +10,10 @@
 .dropdown {
   position: relative;
   display: inline-block;
+}
+.second {
+  position: relative;
+  top: 315px;
 }
 .dropdown-content {
   display: none;
@@ -32,6 +37,20 @@
 }
 button.colorTextAddWindowForButton:hover {
   background-color: #da0707d8;
+}
+
+.fw-light {
+  position: relative;
+  font-size: 2rem;
+  top: -26vh;
+  caret-color: transparent;
+}
+
+.text-muted {
+  caret-color: transparent;
+  position: relative;
+  font-size: 1.5rem;
+  top: -26vh;
 }
 
 /* Карточки людей с ссылками */
