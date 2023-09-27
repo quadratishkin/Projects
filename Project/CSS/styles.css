@@ -4,7 +4,6 @@
   border-radius: 45%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
   padding: 0.6em;
-  margin-bottom: 13em;
 }
 /* Выплывыающее меню на игре */
 .dropdown {
@@ -42,7 +41,6 @@ button.colorTextAddWindowForButton:hover {
 .fw-light {
   position: relative;
   font-size: 2rem;
-  top: -26vh;
   caret-color: transparent;
 }
 
@@ -50,7 +48,6 @@ button.colorTextAddWindowForButton:hover {
   caret-color: transparent;
   position: relative;
   font-size: 1.5rem;
-  top: -26vh;
 }
 
 /* Карточки людей с ссылками */
